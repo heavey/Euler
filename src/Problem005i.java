@@ -8,7 +8,7 @@ public class Problem005i {
         // give multiple start value 1
         long multiple = 1l;
 
-        for (long i = 1l; i <= 27; i++) {
+        for (long i = 1l; i <= 36; i++) {
 
             // rem = remainder of multiple / i
             long rem = multiple % i;
@@ -16,20 +16,11 @@ public class Problem005i {
             // if rem != 0 multiple is not divisible by i, fix this
             if (rem != 0) {
 
-                // rem2 = remainder of i / first remainder
-                long rem2 = i % rem;
-
-                // if i is divisible by first remainder,
-                // multiply multiple by i / first remainder
-                if (rem2 == 0) {
-                    multiple *= (i / rem);
-                } else {
-                    // while remainder of
-                    while (i % rem2 != 0) {
-                        rem2 = i % rem2;
-                    }
-                    multiple *= (i / rem2);
+                // while i is not divisible by rem, rem = remainder of i / rem
+                while (i % rem != 0) {
+                    rem = i % rem;
                 }
+                multiple *= (i / rem);
             }
 
             System.out.println(i + "    " + multiple + "    " + rem);
