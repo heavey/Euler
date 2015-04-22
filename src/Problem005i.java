@@ -1,5 +1,5 @@
 /**
- * 21/04/15. Because Armada.
+ * 21/04/15. Because Armada. I have no idea what I'm doing.
  */
 public class Problem005i {
 
@@ -8,7 +8,7 @@ public class Problem005i {
         // give multiple start value 1
         long multiple = 1l;
 
-        for (long i = 1l; i <= 36; i++) {
+        for (long i = 1l; i <= 42; i++) {
 
             // rem = remainder of multiple / i
             long rem = multiple % i;
